@@ -1,0 +1,13 @@
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\bin\Debug\netcoreapp3.1\NewProekt.exe
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\bin\Debug\netcoreapp3.1\NewProekt.deps.json
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\bin\Debug\netcoreapp3.1\NewProekt.runtimeconfig.json
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\bin\Debug\netcoreapp3.1\NewProekt.runtimeconfig.dev.json
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\bin\Debug\netcoreapp3.1\NewProekt.dll
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\bin\Debug\netcoreapp3.1\NewProekt.pdb
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\obj\Debug\netcoreapp3.1\NewProekt.csproj.AssemblyReference.cache
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\obj\Debug\netcoreapp3.1\NewProekt.AssemblyInfoInputs.cache
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\obj\Debug\netcoreapp3.1\NewProekt.AssemblyInfo.cs
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\obj\Debug\netcoreapp3.1\NewProekt.csproj.CoreCompileInputs.cache
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\obj\Debug\netcoreapp3.1\NewProekt.dll
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\obj\Debug\netcoreapp3.1\NewProekt.pdb
+C:\Users\SahibAkbar\source\repos\NewProekt\NewProekt\obj\Debug\netcoreapp3.1\NewProekt.genruntimeconfig.cache
