@@ -2,40 +2,59 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewProject.Models
+namespace ConsoleAppPProject.Models
 {
     class Department
     {
-        private string Name
+        private string _name;
+        public string Name
         {
             get
             {
-                return Name;
+                return _name;
             }
             set
             {
-                if (Name.Length>=2)
+                if (correctName(value))
                 {
-                    Name = value;
+                    _name = value;
                 }
                 else
                 {
-                    Console.WriteLine("Department adi minimum 2 herfden ibaret olmalidir");
+                    Console.WriteLine("Departmentin adi minimum 2 herfden ibaret olmalidir!!!");
                 }
             }
         }
 
+        private bool correctName(string name)
+        {
+            if (name.Length <=  2)
+            {
+                return false;
+            }
+
+            foreach (char item in name)
+            {
+                if (!Char.IsLetter(item))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private int _workerLimit;
         public int WorkerLimit
         {
             get
             {
-                return WorkerLimit;
+                return _workerLimit;
             }
             set
             {
                 if (value>=1)
                 {
-                    WorkerLimit = value;
+                    _workerLimit = value;
                 }
                 else
                 {
@@ -44,44 +63,58 @@ namespace NewProject.Models
             }
         }
 
+        private int _salaryLimit;
         public int SalaryLimit
         {
             get
             {
-                return SalaryLimit;
+                return _salaryLimit;
             }
             set
             {
                 if (value>=250)
                 {
-                    SalaryLimit = value;
+                    _salaryLimit = value;
                 }
                 else
                 {
-                    Console.WriteLine("Departamentde butun isceleri ayliq cemi verilecek mebleg minimum 250 ola biler");
+                    Console.WriteLine("Departamentde butun iscelere ayliq cemi verilecek mebleg minimum 250 ola biler");
                 }
             }
         }
 
-        public List<Employee>Employees { get; set; }
+        public List<Employee> _employees { get; set; }
+        public List<Employee> Employees
+        {
+            get
+            {
+                return _employees;
+            }
+        }
+
+        public Department()
+        {
+            _employees = new List<Employee>();
+        }
+
 
         public double CalcSalaryAverage()
         {
-            double sum = 0;
-            double average = 0;
-            foreach (var item in Employees)
+            int salaryAverage = 0;
+
+            foreach (Employee emp in Employees)
             {
-                sum += item.Salary;
+                salaryAverage += emp.Salary;
             }
-            if (Employees.Count !=0)
-            {
-                average = sum / Employees.Count;
-                return average;
-            }
-            else
-            {
-                return 0;
-            }
-        }                                                  
+
+            salaryAverage /= Employees.Count;
+
+            return salaryAverage;
+        }
+        public override string ToString()
+        {
+            return $"{Name} {WorkerLimit} {SalaryLimit} {Employees.Count} {CalcSalaryAverage()}";
+        }
+                                                      
     }
 }

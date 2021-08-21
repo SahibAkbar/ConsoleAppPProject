@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewProject.Models
+namespace ConsoleAppPProject.Models
 {
     class Employee
     {
         private static int _counter = 1000;
 
-        public string No { get; set; }
+       
 
         public Employee()
         {
@@ -16,39 +16,59 @@ namespace NewProject.Models
             No = DepartmentName.Substring(0, 2).ToUpper() + _counter;
         }
 
+        public string No { get; set; }
+
         public string Fullname { get; set; }
+
+        private string _position;
 
         public string Position
         {
             get
             {
-                return Position;
+                return _position;
             }
             set
             {
-                if (Position.Length>=2)
+                if (correctName(value))
                 {
-                    Position = value;
+                    _position = value;
                 }
                 else
                 {
-                    Console.WriteLine("Iscinin vezifesi (minimum 2 herfden ibaret olmalidir)");
+                    Console.WriteLine("Iscinin vezifesi (minimum 2 herfden ibaret olmalidir!!!)");
                 }
             }
         }
 
+        private bool correctName(string name)
+        {
+            if (name.Length<=2)
+            {
+                return false;
+            }
+            foreach (char item in name)
+            {
+                if (!char.IsLetter(item))
+                {
 
+                }return false;
+            }
+            return true;
+        }
+
+        private int _salary;
         public int Salary
         {
             get
             {
-                return Salary;
+                return _salary;
             }
             set
             {
-                if (value>=250)
+                if (value >= 250)
                 {
-                    Salary = value;
+                    _salary = value;
                 }
                 else
                 {

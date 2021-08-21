@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SahibAkbar\\source\\repos\\NewProekt\\NewProekt\\NewProekt.csproj",
+      "projectUniqueName": "C:\\Users\\SahibAkbar\\Desktop\\ConsoleApp\\NewProekt\\NewProekt.csproj",
       "projectName": "NewProekt",
-      "projectPath": "C:\\Users\\SahibAkbar\\source\\repos\\NewProekt\\NewProekt\\NewProekt.csproj",
+      "projectPath": "C:\\Users\\SahibAkbar\\Desktop\\ConsoleApp\\NewProekt\\NewProekt.csproj",
       "packagesPath": "C:\\Users\\SahibAkbar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SahibAkbar\\source\\repos\\NewProekt\\NewProekt\\obj\\",
+      "outputPath": "C:\\Users\\SahibAkbar\\Desktop\\ConsoleApp\\NewProekt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SahibAkbar\\AppData\\Roaming\\NuGet\\NuGet.Config",
