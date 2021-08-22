@@ -113,7 +113,7 @@ namespace ConsoleAppPProject.Models
         }
         public override string ToString()
         {
-            return $"{Name} {WorkerLimit} {SalaryLimit} {Employees.Count} {CalcSalaryAverage()}";
+            return $"{Name} {Employees.Count} {CalcSalaryAverage()}";
         }
                                                       
     }

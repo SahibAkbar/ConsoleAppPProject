@@ -7,13 +7,17 @@ namespace ConsoleAppPProject.Models
     class Employee
     {
         private static int _counter = 1000;
-
        
+
+        public Employee(string depart) : this()
+        {
+            DepartmentName = depart;
+            _counter++;
+            No = DepartmentName.Substring(0, 2).ToUpper() + _counter;
+        }
 
         public Employee()
         {
-            _counter++;
-            No = DepartmentName.Substring(0, 2).ToUpper() + _counter;
         }
 
         public string No { get; set; }
