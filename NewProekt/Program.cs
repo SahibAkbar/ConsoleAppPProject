@@ -290,8 +290,12 @@ namespace ConsoleAppPProject
         #region AddEmployee
         static void addEmployee(HumanResourceManager humanResourceManager)
         {
+
+            Console.WriteLine("Iscinin nomresini daxil edin");
+            string no = Console.ReadLine();
             Console.WriteLine("Fullname-i girin!!!");
             string fullname = Console.ReadLine();
+            
 
             Console.WriteLine("Iscinin pozisyasini daxil edin!!");
             string position = Console.ReadLine();
@@ -313,6 +317,7 @@ namespace ConsoleAppPProject
             employee1.Fullname = fullname;
             employee1.Salary = salarySA;
             employee1.Position = position;
+            employee1.No = no;
 
             humanResourceManager.AddEmployee(employee1, DepartmentName);
         }

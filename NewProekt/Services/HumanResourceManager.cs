@@ -33,6 +33,7 @@ namespace NewProekt.Services
             emp.Fullname = employee.Fullname;
             emp.Salary = employee.Salary;
             emp.Position = employee.Position;
+            emp.No = employee.No;
 
             foreach (Department item in Departments)
             {
@@ -82,6 +83,7 @@ namespace NewProekt.Services
                       
                         Console.WriteLine($"{item.Employees[i].Fullname}{item.Employees[i].Salary}  {item.Employees[i].Position}");
 
+                        EditedEmployee.Fullname = employee.Fullname;
                         EditedEmployee.Salary = employee.Salary;
                         EditedEmployee.Position = employee.Position;
 
