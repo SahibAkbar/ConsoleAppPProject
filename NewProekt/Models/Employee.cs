@@ -7,7 +7,10 @@ namespace ConsoleAppPProject.Models
     class Employee
     {
         private static int _counter = 1000;
-       
+
+        public Employee()
+        {
+        }
 
         public Employee(string depart) : this()
         {
@@ -16,16 +19,14 @@ namespace ConsoleAppPProject.Models
             No = DepartmentName.Substring(0, 2).ToUpper() + _counter;
         }
 
-        public Employee()
-        {
-        }
 
-        public string No { get; set; }
 
-        public string Fullname { get; set; }
+        public string No;
+
+        public string Fullname;
 
         private string _position;
-
+        // iscinin vezifesi ucun method
         public string Position
         {
             get
@@ -47,20 +48,20 @@ namespace ConsoleAppPProject.Models
 
         private bool correctName(string name)
         {
-            if (name.Length<=2)
+            if (name.Length<2)
             {
                 return false;
             }
             foreach (char item in name)
             {
-                if (!char.IsLetter(item))
+                if (!Char.IsLetter(item))
                 {
-
-                }return false;
+                    return false;
+                }               
             }
             return true;
         }
-
+        //iscinin massi ucun method
         private int _salary;
         public int Salary
         {
@@ -70,7 +71,7 @@ namespace ConsoleAppPProject.Models
             }
             set
             {
-                if (value >= 250)
+                if (value > 250)
                 {
                     _salary = value;
                 }
@@ -81,6 +82,6 @@ namespace ConsoleAppPProject.Models
             }
         }
 
-        public string DepartmentName { get; set; }
+        public string DepartmentName;
     }
 }

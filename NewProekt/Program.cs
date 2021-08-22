@@ -75,6 +75,7 @@ namespace ConsoleAppPProject
                         break;
 
                     case 2:
+
                         editDepartment(humanResourceManager);
                         break;
 
@@ -146,7 +147,7 @@ namespace ConsoleAppPProject
         {
             foreach (Department item in humanResourceManager.Departments)
             {
-                if (item.Employees.Count>0)
+                if (item.Employees.Count > 0)
                 {
                     Console.WriteLine($"{item.Name}{item.Employees.Count}{item.CalcSalaryAverage()}");
                 }
@@ -256,7 +257,7 @@ namespace ConsoleAppPProject
             for (int i = 0; i < humanResourceManager.Departments.Count; i++)
             {
                 Department departmentEmployees = humanResourceManager.Departments[i];
-                for (int a = 0; i < departmentEmployees.Employees.Count; a++)
+                for (int a = 0; a < departmentEmployees.Employees.Count; a++)
                 {
                     Console.WriteLine($"{departmentEmployees.Employees[i].No} {departmentEmployees.Employees[i].Fullname} {departmentEmployees.Employees[i].DepartmentName} {departmentEmployees.Employees[i].Salary}");
                 }
@@ -289,8 +290,6 @@ namespace ConsoleAppPProject
         #region AddEmployee
         static void addEmployee(HumanResourceManager humanResourceManager)
         {
-            Employee employee1 = new Employee();
-
             Console.WriteLine("Fullname-i girin!!!");
             string fullname = Console.ReadLine();
 
@@ -309,11 +308,11 @@ namespace ConsoleAppPProject
 
             Console.WriteLine("Departmanin adini daxil ediniz!!!");
             string DepartmentName = Console.ReadLine();
-            Employee employee = new Employee(DepartmentName);
+            Employee employee1 = new Employee(DepartmentName);
 
-            employee.Fullname = fullname;
-            employee.Salary = salarySA;
-            employee.Position = position;
+            employee1.Fullname = fullname;
+            employee1.Salary = salarySA;
+            employee1.Position = position;
 
             humanResourceManager.AddEmployee(employee1, DepartmentName);
         }
@@ -357,7 +356,7 @@ namespace ConsoleAppPProject
             }
             if (corrt)
             {
-                Console.WriteLine($"{SaSalary}{SaSalary}{SaPosition}");
+                Console.WriteLine($"{SaName}{SaSalary}{SaPosition}");
                 Console.WriteLine("Yeni maasi girmeyiniz xayis olunur");
                 string CmSalary = Console.ReadLine();
                 int XmSalary;
@@ -367,11 +366,11 @@ namespace ConsoleAppPProject
                     CmSalary = Console.ReadLine();
                     int.TryParse(CmSalary, out XmSalary);
                 }
-                Console.WriteLine("Yeni maasi girmeyiniz xayis olunur");
+                Console.WriteLine("Yeni vezifeni girmeyiniz xayis olunur");
                 string YeniPosition = Console.ReadLine();
 
                 humanResourceManager.Departments[satet].Employees[atset].Position = YeniPosition;
-                humanResourceManager.Departments[satet].Employees[atset].Salary = SaSalary;
+                humanResourceManager.Departments[satet].Employees[atset].Salary = XmSalary;
             }
             else
             {

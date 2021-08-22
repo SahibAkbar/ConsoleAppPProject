@@ -28,7 +28,7 @@ namespace ConsoleAppPProject.Models
 
         private bool correctName(string name)
         {
-            if (name.Length <=  2)
+            if (name.Length  <  2)
             {
                 return false;
             }
@@ -52,7 +52,7 @@ namespace ConsoleAppPProject.Models
             }
             set
             {
-                if (value>=1)
+                if (value > 1)
                 {
                     _workerLimit = value;
                 }
@@ -62,7 +62,7 @@ namespace ConsoleAppPProject.Models
                 }
             }
         }
-
+        //Depaertmentde olan butun iscilerin maasi methodu(250)
         private int _salaryLimit;
         public int SalaryLimit
         {
@@ -72,7 +72,7 @@ namespace ConsoleAppPProject.Models
             }
             set
             {
-                if (value>=250)
+                if (value>250)
                 {
                     _salaryLimit = value;
                 }
@@ -83,7 +83,7 @@ namespace ConsoleAppPProject.Models
             }
         }
 
-        public List<Employee> _employees { get; set; }
+        public List<Employee> _employees;
         public List<Employee> Employees
         {
             get
@@ -98,7 +98,7 @@ namespace ConsoleAppPProject.Models
         }
 
 
-        public double CalcSalaryAverage()
+        public int CalcSalaryAverage()
         {
             int salaryAverage = 0;
 

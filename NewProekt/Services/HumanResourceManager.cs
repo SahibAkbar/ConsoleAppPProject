@@ -26,21 +26,21 @@ namespace NewProekt.Services
         {
             _departments.Add(department);
         }
-
+        //Departmente isci elave etmek ucun method yazrg
         public void AddEmployee(Employee employee, string departmentName)
         {
-            Employee employee1 = new Employee();
-            employee1.Fullname = employee.Fullname;
-            employee1.Salary = employee.Salary;
-            employee1.Position = employee.Position;
+            Employee emp = new Employee();
+            emp.Fullname = employee.Fullname;
+            emp.Salary = employee.Salary;
+            emp.Position = employee.Position;
 
             foreach (Department item in Departments)
             {
                 if (item.Name.ToLower() == departmentName.ToLower())
                 {
-                    if (true)
+                    if (item.WorkerLimit > item.Employees.Count)
                     {
-                        item.Employees.Add(employee1);
+                        item.Employees.Add(emp);
                         Console.WriteLine("Isci sirkete elave olundu tesekkurler");
                     }
                     else
@@ -50,7 +50,7 @@ namespace NewProekt.Services
                 }
             }
         }
-
+        //Departmentde deyisiklik aparmag ucun istifade olunanlar
         public void EditDepartaments(string Name,Department department)
         {
             foreach (Department department1 in _departments)
@@ -68,20 +68,22 @@ namespace NewProekt.Services
             }
         }
 
+
+        //isciler ucun deyisikklik aparmag methodu
         public void EditEmployee(string num, string fullname, int salary, string position, Employee employee)
         {
-            Employee employee1 = new Employee();
+            Employee EditedEmployee = new Employee();
             foreach (Department item in _departments)
             {
-                for (int i = 0; i < Employees.Count; i++)
+                for (int i = 0; i < item.Employees.Count; i++)
                 {
                     if (item.Employees[i].No == num)
                     {
                       
                         Console.WriteLine($"{item.Employees[i].Fullname}{item.Employees[i].Salary}  {item.Employees[i].Position}");
 
-                        employee1.Salary = employee.Salary;
-                        employee1.Position = employee.Position;
+                        EditedEmployee.Salary = employee.Salary;
+                        EditedEmployee.Position = employee.Position;
 
                     }
                     else
@@ -96,8 +98,9 @@ namespace NewProekt.Services
         public List<Department> GetDepartments()
         {
             return Departments;
-            Console.WriteLine("P222 Canavarlarina esq olsun");
         }
+
+        //Departmentde isci silmek ucun lazim olanlar
 
         public void RemoveEmployee(string num, string departmentName)
         {
