@@ -259,7 +259,7 @@ namespace ConsoleAppPProject
                 Department departmentEmployees = humanResourceManager.Departments[i];
                 for (int a = 0; a < departmentEmployees.Employees.Count; a++)
                 {
-                    Console.WriteLine($"{departmentEmployees.Employees[i].No} {departmentEmployees.Employees[i].Fullname} {departmentEmployees.Employees[i].DepartmentName} {departmentEmployees.Employees[i].Salary}");
+                    Console.WriteLine($"\n Iscinin nomresi {departmentEmployees.Employees[a].No} \n Iscinin Ad Soyadi {departmentEmployees.Employees[a].Fullname} \n Iscinin vezifesi {departmentEmployees.Employees[a].Position} \n Iscinin maasi {departmentEmployees.Employees[a].Salary} \n Departmentin adi {departmentEmployees.Employees[a].DepartmentName}");
                 }
             }
         }
@@ -402,6 +402,7 @@ namespace ConsoleAppPProject
                     {
                         department.Employees.Remove(department.Employees[i]);
 
+                        Console.WriteLine("Isci ugurlu shekilde silindi");
                         return;
                     }
                 }

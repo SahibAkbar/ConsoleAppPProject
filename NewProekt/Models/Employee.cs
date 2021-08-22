@@ -21,7 +21,7 @@ namespace ConsoleAppPProject.Models
 
 
 
-        public string No;
+        public string No { get; set; }
 
         public string Fullname;
 
