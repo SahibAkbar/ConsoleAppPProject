@@ -117,7 +117,7 @@ namespace ConsoleAppPProject
                         break;
 
                     case 2:
-                        getEmployeesInDepartment(humanResourceManager);
+                        GetemployeesDepartment(humanResourceManager);
                         break;
 
                     case 3:
@@ -257,31 +257,34 @@ namespace ConsoleAppPProject
             for (int i = 0; i < humanResourceManager.Departments.Count; i++)
             {
                 Department departmentEmployees = humanResourceManager.Departments[i];
-                for (int a = 0; a < departmentEmployees.Employees.Count; a++)
+                for (int x = 0; x < departmentEmployees.Employees.Count; x++)
                 {
-                    Console.WriteLine($"\n Iscinin nomresi {departmentEmployees.Employees[a].No} \n Iscinin Ad Soyadi {departmentEmployees.Employees[a].Fullname} \n Iscinin vezifesi {departmentEmployees.Employees[a].Position} \n Iscinin maasi {departmentEmployees.Employees[a].Salary} \n Departmentin adi {departmentEmployees.Employees[a].DepartmentName}");
+                    Console.WriteLine($"\n Iscinin nomresi: {departmentEmployees.Employees[x].No} \n Iscinin Ad Soyadi: {departmentEmployees.Employees[x].Fullname} \n Iscinin maasi: {departmentEmployees.Employees[x].Salary} \n Departmentin adi: {departmentEmployees.Employees[x].DepartmentName}");
                 }
             }
         }
         #endregion
 
         #region GetEmployeesDepartment
-        static void getEmployeesInDepartment(HumanResourceManager humanResourceManager)
+        static void GetemployeesDepartment(HumanResourceManager humanResourceManager)
         {
 
             Console.WriteLine("Zehmet olmasa departmentin adin daxil edin");
-            string depName = Console.ReadLine();
+            string Department = Console.ReadLine();
 
-            Department dep = humanResourceManager.Departments.Find(hd => hd.Name.ToLower() == depName.ToLower());
+            Department DEPARTMENT = humanResourceManager.Departments.Find(t => t.Name.ToLower() == Department.ToLower());
 
-            if (dep != null)
+            if (DEPARTMENT != null)
             {
 
-                for (int i = 0; i < dep.Employees.Count; i++)
+                for (int i = 0; i < DEPARTMENT.Employees.Count; i++)
                 {
-                    Console.WriteLine("P222 Canavarlari");
-                    Console.WriteLine($"{dep.Employees[i].No} {dep.Employees[i].Fullname} {dep.Employees[i].Position} {dep.Employees[i].Salary}");
+                    Console.WriteLine($"\n Iscinin nomresi: {DEPARTMENT.Employees[i].No} \n Iscinin adi ve soyadi: {DEPARTMENT.Employees[i].Fullname} \n Iscinin yerlesdiyi pazisya: {DEPARTMENT.Employees[i].Position} \n Iscinin aldigi maas: {DEPARTMENT.Employees[i].Salary} ");
                 }
+            }
+            else
+            {
+                Console.WriteLine("Bu adda department yoxdur");
             }
 
         }
@@ -291,8 +294,6 @@ namespace ConsoleAppPProject
         static void addEmployee(HumanResourceManager humanResourceManager)
         {
 
-            Console.WriteLine("Iscinin nomresini daxil edin");
-            string no = Console.ReadLine();
             Console.WriteLine("Fullname-i girin!!!");
             string fullname = Console.ReadLine();
             
@@ -317,9 +318,8 @@ namespace ConsoleAppPProject
             employee1.Fullname = fullname;
             employee1.Salary = salarySA;
             employee1.Position = position;
-            employee1.No = no;
 
-            humanResourceManager.AddEmployee(employee1, DepartmentName);
+            humanResourceManager.AddEmployee(employee1,DepartmentName);
         }
         #endregion
 

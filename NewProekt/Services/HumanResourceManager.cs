@@ -29,11 +29,11 @@ namespace NewProekt.Services
         //Departmente isci elave etmek ucun method yazrg
         public void AddEmployee(Employee employee, string departmentName)
         {
-            Employee emp = new Employee();
-            emp.Fullname = employee.Fullname;
-            emp.Salary = employee.Salary;
-            emp.Position = employee.Position;
-            emp.No = employee.No;
+            Employee employer = new Employee();
+            employer.Fullname = employee.Fullname;
+            employer.Salary = employee.Salary;
+            employer.Position = employee.Position;
+            employer.No = employee.No;
 
             foreach (Department item in Departments)
             {
@@ -41,8 +41,24 @@ namespace NewProekt.Services
                 {
                     if (item.WorkerLimit > item.Employees.Count)
                     {
-                        item.Employees.Add(emp);
-                        Console.WriteLine("Isci sirkete elave olundu tesekkurler");
+                        if (item.WorkerLimit >item.Employees.Count)
+                        {
+                            if (employer.Salary >250)
+                            {
+                                try
+                                {
+                                    if (employer.Position.Length >=2)
+                                    {
+                                        item.Employees.Add(employer);
+                                        Console.WriteLine("Isci sirkete elave olundu tesekkurler");
+
+                                    }
+                                }
+                                catch (Exception)
+                                {
+                                }
+                            }
+                        }
                     }
                     else
                     {

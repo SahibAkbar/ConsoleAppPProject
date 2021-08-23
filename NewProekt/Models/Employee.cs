@@ -8,6 +8,14 @@ namespace ConsoleAppPProject.Models
     {
         private static int _counter = 1000;
 
+        public static void ALQR()
+        {
+            _counter = 1000;
+        }
+
+        public string DepartmentName;
+
+
         public Employee()
         {
         }
@@ -21,7 +29,18 @@ namespace ConsoleAppPProject.Models
 
 
 
-        public string No { get; set; }
+        private string _no;
+        public string No
+        {
+            get
+            {
+                return _no;
+            }
+            set
+            {
+                _no = value;
+            }
+        }
 
         public string Fullname;
 
@@ -82,6 +101,5 @@ namespace ConsoleAppPProject.Models
             }
         }
 
-        public string DepartmentName;
     }
 }
